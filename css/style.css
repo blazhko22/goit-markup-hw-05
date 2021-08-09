@@ -85,6 +85,8 @@ img {
 .nav-link:hover,
 .nav-link:focus {
     color: var(--blue-color);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .info-list{
     display: flex;
@@ -110,6 +112,8 @@ img {
 .info-link:hover,
 .info-link:focus {
     color: var(--blue-color);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .info-icon {
     margin-right: 10px;
@@ -118,6 +122,8 @@ img {
 .info-icon:hover,
 .info-icon:focus {
     fill: var(--blue-color);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*Секция Герой*/
 .hero {
@@ -210,6 +216,24 @@ img {
     display: flex;
     justify-content: space-between;
 }
+.business-roster {
+    position: relative;
+}
+.roster-block {
+    position: absolute;
+    width: 370px;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);
+    bottom: 0;
+}
+.roster-text {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--white-color);
+    padding: 27px 0;
+}
 /*Наша команда*/
 .team {
     padding: 94px 0;
@@ -263,6 +287,8 @@ img {
 .team-box-link:hover,
 .team-box-link:focus {
     background-color: var(--blue-color);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-box-link svg {
     fill: #AFB1B8;
@@ -270,6 +296,8 @@ img {
 .team-box-link:hover svg,
 .team-box-link:focus svg {
     fill: var(--white-color);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*Клиенты*/
 .client {
@@ -294,6 +322,8 @@ img {
 .client-box-link:focus {
     border: 1px solid var(--blue-color);
     color: var(--blue-color);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-svg-link {
     fill: currentColor;
@@ -301,6 +331,8 @@ img {
 .client-svg-link:hover,
 .client-svg-link:focus {
     fill: var(--blue-color);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*Подвал*/
 .footer {
@@ -374,18 +406,17 @@ img {
 .footer-social-link:hover,
 .footer-social-link:focus {
     background-color: var(--blue-color);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*Портфолио css*/
 .general-link {
     color: var(--blue-color);
 }
-/* .general-link::after {
-    content: '';
-    border: solid 4px var(--blue-color);
-} */
 .general-link:hover,
 .general-link:focus {
-    
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-list {
     padding-top: 94px;
@@ -415,6 +446,8 @@ img {
     color: var(--white-color);
     background-color: var(--blue-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .general-key {
     color: var(--white-color);
@@ -436,10 +469,38 @@ img {
 .link-navigation {
    text-decoration: none; 
    display: block;
+   position: relative;
 } 
 .link-navigation:hover,
 .link-navigation:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-link {
+    position: relative;
+    overflow: hidden;
+}
+.link-navigation:hover .project-overlay {
+    transform: translateY(0);
+}
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+    
+    transform: translateY(100%);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-text {
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--white-color);
+    padding: 63px 24px;
 }
 .list-text {
     padding: 20px 24px;
@@ -456,3 +517,35 @@ img {
     line-height: 1.87;
     color: var(--main-text-color);
 }
+/* Модальное окно */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 528px;
+    height: 581px;    
+    background-color: var(--white-color);   
+}
+.modal-button {
+    position: absolute;
+    display: flex;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 8px;
+    right: 8px;
+}   
