@@ -120,12 +120,13 @@ img {
 .info-icon {
     margin-right: 10px;
     fill: currentColor;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: color;
 }
 .info-icon:hover,
 .info-icon:focus {
     fill: var(--blue-color);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*Секция Герой*/
 .hero {
